@@ -12,7 +12,7 @@ html {
   --color-primary: #3385f1;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
-  --color-headings: #1b0760;
+  --color-headings: #1c0a5d;
   --color-body: #918ca4;
   --color-body-darker: #5c5577;
   --color-border: #ccc;
@@ -186,8 +186,17 @@ a {
 .btn--primary:hover {
   background: #3a8ffd;
 }
+.btn--heading {
+  background: var(--color-headings);
+  color: #fff;
+}
+.btn--heading:hover {
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
+}
 .btn--secondary {
-  background: var(--color-secondary);
+  background: var(--color-headings);
   color: #fff;
 }
 .btn--secondary:hover {
@@ -260,7 +269,7 @@ a {
 }
 .card__header,
 .card__body {
-  padding: 2rem 3rem;
+  padding: 4rem 4rem;
 }
 .card--primary .card__header {
   background: var(--color-primary);
@@ -270,9 +279,15 @@ a {
   background: var(--color-secondary);
   color: #fff;
 }
-/* Plans */
+.card--primary .badge--primary {
+  background: #126de4;
+}
 .card--secondary .badge--secondary {
   background: #03cdf1;
+}
+/* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
 }
 .plan__name {
   color: #fff;
@@ -306,8 +321,18 @@ a {
   top: -6px;
   width: 40px;
 }
+/* tofix===================================== */
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
+}
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 @media screen and (min-width: 1024px) {
   .plan__name {
@@ -598,4 +623,12 @@ a {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+/* Plans Block*/
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
 }
